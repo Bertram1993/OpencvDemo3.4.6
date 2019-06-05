@@ -103,7 +103,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -151,11 +151,15 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ChapterSixth\ChapterSixth.h" />
+    <ClInclude Include="src\ChapterFifth\ChapterFifth.h" />
     <ClInclude Include="src\ChapterOne\ChapterOne.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ChapterSixth\ChapterSixth.cpp" />
+    <ClCompile Include="src\ChapterFifth\ChapterFifth.cpp" />
     <ClCompile Include="src\ChapterOne\ChapterOne.cpp" />
     <ClCompile Include="opencvDemo3.4.cpp" />
     <ClCompile Include="stdafx.cpp">

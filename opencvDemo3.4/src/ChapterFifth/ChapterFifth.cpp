@@ -11,9 +11,9 @@ using namespace cv;
 
 void ChapterFifth::onAlphaChange(int pos, void *data)
 {
-	Mat srcImageA = imread("G:\\TestMaterials\\photo\\1280_800_1.jpeg");
+	Mat srcImageA = imread("../TestMaterials/photo/1280_800_1.jpeg");
 	//imshow("srcImageA", srcImageA);
-	Mat srcImageB = imread("G:\\TestMaterials\\photo\\1280_800_3.jpg");
+	Mat srcImageB = imread("../TestMaterials/photo/1280_800_3.jpg");
 	//imshow("srcImageB", srcImageB);
 
 	if (srcImageA.channels() != srcImageB.channels())
@@ -34,7 +34,7 @@ void ChapterFifth::onAlphaChange(int pos, void *data)
 
 void ChapterFifth::onContrastAndBright(int pos, void * data)
 {
-	Mat srcImage = imread("G:\\TestMaterials\\photo\\1280_800_3.jpg");
+	Mat srcImage = imread("../TestMaterials/photo/1280_800_3.jpg");
 //	Mat dstImage = srcImage.clone();
 
 	for (int i=0; i<srcImage.rows; i++)
@@ -54,7 +54,7 @@ void ChapterFifth::onContrastAndBright(int pos, void * data)
 
 void ChapterFifth::onDilateValueChange(int pos, void * data)
 {
-	Mat srcImage = imread("G:\\TestMaterials\\06.jpg");
+	Mat srcImage = imread("../TestMaterials/06.jpg");
 	Mat element = getStructuringElement(MORPH_RECT, Size(pos, pos));
 	Mat out;
 	dilate(srcImage, out, element);
@@ -63,7 +63,7 @@ void ChapterFifth::onDilateValueChange(int pos, void * data)
 
 void ChapterFifth::onErodeValueChange(int pos, void * data)
 {
-	Mat srcImage = imread("G:\\TestMaterials\\06.jpg");
+	Mat srcImage = imread("../TestMaterials/06.jpg");
 	Mat element = getStructuringElement(MORPH_RECT, Size(pos, pos));
 	Mat out;
 	erode(srcImage, out, element);
@@ -72,9 +72,9 @@ void ChapterFifth::onErodeValueChange(int pos, void * data)
 
 void ChapterFifth::onMorphologyExValueChange(int pos, void *data)
 {
-	//Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
-	Mat srcImage = imread("G:\\TestMaterials\\06.jpg");
-	//Mat srcImage = imread("G:\\TestMaterials\\qiammo.png");
+	//Mat srcImage = imread("../TestMaterials/04.jpg");
+	Mat srcImage = imread("../TestMaterials/06.jpg");
+	//Mat srcImage = imread("../TestMaterials/qiammo.png");
 	imshow("TestMorphologyEx", srcImage);
 	if (pos == 0)
 	{
@@ -197,9 +197,9 @@ void ChapterFifth::TestAddWeight()
 {
 	namedWindow("Alpha", WINDOW_AUTOSIZE);
 
-	Mat srcImageA = imread("G:\\TestMaterials\\photo\\1280_800_2.jpg");
+	Mat srcImageA = imread("../TestMaterials/photo/1280_800_2.jpg");
 	imshow("srcImageA", srcImageA);
-	Mat srcImageB = imread("G:\\TestMaterials\\photo\\1280_800_3.jpg");
+	Mat srcImageB = imread("../TestMaterials/photo/1280_800_3.jpg");
 	imshow("srcImageB", srcImageB);
 	
 	createTrackbar("ajustAlpha", "Alpha", 0, 10, onAlphaChange, nullptr);
@@ -207,7 +207,7 @@ void ChapterFifth::TestAddWeight()
 
 void ChapterFifth::TestSplit()
 {
-	Mat srcImageA = imread("G:\\TestMaterials\\photo\\1280_800_3.jpg");
+	Mat srcImageA = imread("../TestMaterials/photo/1280_800_3.jpg");
 	imshow("srcImageA", srcImageA);
 	
 	vector<Mat> channels;
@@ -223,7 +223,7 @@ void ChapterFifth::TestSplit()
 
 void ChapterFifth::TestMerge()
 {
-	Mat srcImageA = imread("G:\\TestMaterials\\photo\\1280_800_3.jpg");
+	Mat srcImageA = imread("../TestMaterials/photo/1280_800_3.jpg");
 	//imshow("srcImageA", srcImageA);
 
 	vector<Mat> channels;
@@ -246,8 +246,8 @@ void ChapterFifth::TestBright()
 
 void ChapterFifth::TestDFT()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\photo\\1280_800_3.jpg", IMREAD_GRAYSCALE);
-	//Mat srcImage = imread("G:\\TestMaterials\\05.png", IMREAD_GRAYSCALE);
+	Mat srcImage = imread("../TestMaterials/photo/1280_800_3.jpg", IMREAD_GRAYSCALE);
+	//Mat srcImage = imread("../TestMaterials/05.png", IMREAD_GRAYSCALE);
 	imshow("src", srcImage);
 	int bestRows = getOptimalDFTSize(srcImage.rows);
 	int bestCols = getOptimalDFTSize(srcImage.cols);
@@ -344,7 +344,7 @@ void ChapterFifth::TestFloodFill()
 	
 	while (true)
 	{
-		Mat srcImage = imread("G:\\TestMaterials\\06.jpg");
+		Mat srcImage = imread("../TestMaterials/06.jpg");
 		imshow("TestFloodFill", srcImage);
 		Rect ccomp = { 0,0,1024,1024 };
 		floodFill(srcImage, Point(0, 0), Scalar(255, 255, 255), &ccomp, Scalar(loDiffValue, loDiffValue, loDiffValue), Scalar(upDiffValue, upDiffValue, upDiffValue), 8);
@@ -359,7 +359,7 @@ void ChapterFifth::TestFloodFill()
 
 void ChapterFifth::TestPyrUp()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\05.png");
+	Mat srcImage = imread("../TestMaterials/05.png");
 	imshow("src", srcImage);
 	Mat dstImage;
 
@@ -370,7 +370,7 @@ void ChapterFifth::TestPyrUp()
 
 void ChapterFifth::TestPyrDown()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
+	Mat srcImage = imread("../TestMaterials/04.jpg");
 	imshow("src", srcImage);
 	Mat dstImage;
 
@@ -381,7 +381,7 @@ void ChapterFifth::TestPyrDown()
 
 void ChapterFifth::TestResize()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
+	Mat srcImage = imread("../TestMaterials/04.jpg");
 	imshow("src", srcImage);
 	Mat dstImage = Mat::zeros(200, 200, CV_8UC3);
 	Mat dstImage1 = Mat::zeros(200, 200, CV_8UC3);
@@ -398,7 +398,7 @@ void ChapterFifth::TestThreshold()
 	namedWindow("TestThreshold", CV_WINDOW_AUTOSIZE);
 	createTrackbar("ThresholdType", "TestThreshold", 0, 4, onThresholdTypeValueChange, 0);
 	createTrackbar("ThresholdValue", "TestThreshold", 0, 20, onThresholdValueChange, 0);
-	Mat srcImage = imread("G:\\TestMaterials\\06.jpg");
+	Mat srcImage = imread("../TestMaterials/06.jpg");
 	imshow("TestThreshold", srcImage);
 	cvtColor(srcImage, srcImage, COLOR_RGB2GRAY);
 	Mat dstImage;
@@ -422,7 +422,7 @@ void ChapterFifth::TestCanny()
 	createTrackbar("high value", "TestCanny", &cannyHighValue, 255, onCannyHighValue, 0);
 	createTrackbar("low value", "TestCanny", &cannyLowValue, 255, onCannyLowValue, 0);
 	//Mat srcImage = imread("G:\\TestMaterials\\06.jpg");
-	Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
+	Mat srcImage = imread("../TestMaterials/04.jpg");
 	imshow("TestCanny", srcImage);
 	cvtColor(srcImage, srcImage, COLOR_RGB2GRAY);
 	Mat dstImage;
@@ -439,7 +439,7 @@ void ChapterFifth::TestCanny()
 
 void ChapterFifth::TestLaplacian()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
+	Mat srcImage = imread("../TestMaterials/04.jpg");
 	imshow("src", srcImage);
 	GaussianBlur(srcImage, srcImage, Size(3, 3), 0);
 	imshow("GaussianBlur", srcImage);
@@ -453,7 +453,7 @@ void ChapterFifth::TestLaplacian()
 
 void ChapterFifth::TestSobel()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
+	Mat srcImage = imread("../TestMaterials/04.jpg");
 	imshow("src", srcImage);
 	cvtColor(srcImage, srcImage, COLOR_RGB2GRAY);
 	Mat gradX;
@@ -475,7 +475,7 @@ void ChapterFifth::TestSobel()
 
 void ChapterFifth::TestScharr()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
+	Mat srcImage = imread("../TestMaterials/04.jpg");
 	imshow("src", srcImage);
 	Mat gradX;
 	Mat gradY;
@@ -497,8 +497,8 @@ void ChapterFifth::TestHoughLines()
 {
 	namedWindow("TestHoughLines", CV_WINDOW_AUTOSIZE);
 	createTrackbar("houghLineValue", "TestHoughLines", 0, 300, onHoughLinesValueChange, 0);
-	//Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
-	Mat srcImage = imread("G:\\TestMaterials\\02.png");
+	//Mat srcImage = imread("../TestMaterials/04.jpg");
+	Mat srcImage = imread("../TestMaterials/02.png");
 
 	Mat cannyImage;
 	Canny(srcImage, cannyImage, 50, 200);
@@ -538,8 +538,8 @@ void ChapterFifth::TestHoughLinesP()
 {
 	namedWindow("TestHoughLinesP", CV_WINDOW_AUTOSIZE);
 	createTrackbar("houghLinePValue", "TestHoughLinesP", 0, 1000, onHoughLinesPValueChange, 0);
-	//Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
-	Mat srcImage = imread("G:\\TestMaterials\\02.png");
+	//Mat srcImage = imread("../TestMaterials/04.jpg");
+	Mat srcImage = imread("../TestMaterials/02.png");
 
 	Mat cannyImage;
 	Canny(srcImage, cannyImage, 50, 200);
@@ -566,8 +566,8 @@ void ChapterFifth::TestHoughCircle()
 {
 	namedWindow("TestHoughCircle", CV_WINDOW_AUTOSIZE);
 	createTrackbar("houghLinePValue", "TestHoughCircle", 0, 500, onHoughCircleValueChange, 0);
-	Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
-	//Mat srcImage = imread("G:\\TestMaterials\\02.png");
+	Mat srcImage = imread("../TestMaterials/04.jpg");
+	//Mat srcImage = imread("../TestMaterials/02.png");
 
 	cvtColor(srcImage, srcImage, CV_BGR2GRAY);
 	imshow("TestHoughCircle", srcImage);
@@ -593,7 +593,7 @@ void ChapterFifth::TestHoughCircle()
 
 void ChapterFifth::TestReMap()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
+	Mat srcImage = imread("../TestMaterials/04.jpg");
 	imshow("srcImage", srcImage);
 	Mat dstImage;
 	dstImage.create(srcImage.size(), srcImage.type());
@@ -628,8 +628,8 @@ void ChapterFifth::TestAffineMap()
 	namedWindow("TestAffineMap", CV_WINDOW_AUTOSIZE);
 	createTrackbar("angleValue", "TestAffineMap", 0, 360, onAngleValueChange, 0);
 	createTrackbar("scaleValue", "TestAffineMap", 0, 100, onScaleValueChange, 0);
-	//Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
-	Mat srcImage = imread("G:\\TestMaterials\\06.jpg");
+	//Mat srcImage = imread("../TestMaterials/04.jpg");
+	Mat srcImage = imread("../TestMaterials/06.jpg");
 	Mat dstImage = Mat::zeros(srcImage.rows, srcImage.cols, srcImage.type());
 	Mat dstImageA = Mat::zeros(srcImage.rows, srcImage.cols, srcImage.type());
 
@@ -665,7 +665,7 @@ void ChapterFifth::TestAffineMap()
 
 void ChapterFifth::TestEqualizeHist()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\hdr1.jpg");
+	Mat srcImage = imread("../TestMaterials/hdr1.jpg");
 	imshow("srcImage", srcImage);
 
 	Mat dstGrayImage;
@@ -683,7 +683,7 @@ void ChapterFifth::TestEqualizeHist()
 
 void ChapterFifth::TestFindContours()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\hdr1.jpg", 0);
+	Mat srcImage = imread("../TestMaterials/hdr1.jpg", 0);
 	imshow("srcImage", srcImage);
 	
 	Mat dstImage = Mat::zeros(srcImage.rows, srcImage.cols, CV_8UC3);
@@ -812,7 +812,7 @@ void ChapterFifth::TestContourArea()
 void ChapterFifth::TestWatershed()
 {
 	RNG& rng = theRNG();//返回默认的随机生成器
-	Mat srcImage = imread("G:\\TestMaterials\\photo\\1280_800_3.jpg");
+	Mat srcImage = imread("../TestMaterials/photo/1280_800_3.jpg");
 	//imshow("srcImage", srcImage);
 
 	Mat grayImage;
@@ -876,18 +876,13 @@ void ChapterFifth::TestWatershed()
 		}
 	}
 	imshow("PerspectiveImage", PerspectiveImage);
-
-
-	
-
-
 }
 
 Mat ChapterFifth::inpaintMaskImage = Mat();
 Mat ChapterFifth::srcImageClone = Mat();
 void ChapterFifth::TestInpaint()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\photo\\1280_800_3.jpg");
+	Mat srcImage = imread("../TestMaterials/photo/1280_800_3.jpg");
 	srcImageClone = srcImage.clone();
 	inpaintMaskImage = Mat::zeros(srcImageClone.size(), CV_8U);
 	imshow("srcImageClone", srcImageClone);
@@ -918,7 +913,7 @@ void ChapterFifth::TestCalcHist()
 {
 #define OPEN 5
 #if (OPEN==0)//HSV分布直方图
-	Mat srcImage = imread("G:\\TestMaterials\\photo\\1280_800_3.jpg");
+	Mat srcImage = imread("../TestMaterials/photo/1280_800_3.jpg");
 	Mat hsvImage;
 	cvtColor(srcImage, hsvImage, CV_BGR2HSV);
 	imshow("hsvImage", hsvImage);
@@ -954,7 +949,7 @@ void ChapterFifth::TestCalcHist()
 #elif (OPEN==1)//RGB各分量曲线图
 	Mat src, dst;
 	//加载图像
-	src = imread("G:\\TestMaterials\\photo\\1280_800_3.jpg");
+	src = imread("../TestMaterials/photo/1280_800_3.jpg");
 
 	namedWindow("INPUT_TITLE", CV_WINDOW_AUTOSIZE);
 	namedWindow("OUTPUT_TITLE", CV_WINDOW_AUTOSIZE);
@@ -1000,7 +995,7 @@ void ChapterFifth::TestCalcHist()
 
 #elif (OPEN==2)
 #define HIST_SIZE (256)
-	Mat srcImage = imread("G:\\TestMaterials\\photo\\1280_800_2.jpg");
+	Mat srcImage = imread("../TestMaterials/photo/1280_800_2.jpg");
 	Mat dstHist;
 	int dims = 1;
 	float hranges[] = { 0,255 };
@@ -1025,7 +1020,7 @@ void ChapterFifth::TestCalcHist()
 
 #elif (OPEN==3)//RGB各分量直方图
 	//载入图片
-	Mat srcImage = imread("G:\\TestMaterials\\photo\\1280_800_2.jpg");
+	Mat srcImage = imread("../TestMaterials/photo/1280_800_2.jpg");
 	//imshow("原图", srcImage);
 
 	//参数准备
@@ -1084,8 +1079,8 @@ void ChapterFifth::TestCalcHist()
 	//在窗口中显示
 	imshow("RGB", histImage);
 #elif (OPEN==4) //图像的灰度直方图
-    //Mat srcImage = imread("G:\\TestMaterials\\photo\\1280_800_3.jpg");
-    Mat srcImage = imread("G:\\TestMaterials\\01.jpg");
+    //Mat srcImage = imread("../TestMaterials/photo/1280_800_3.jpg");
+    Mat srcImage = imread("../TestMaterials/01.jpg");
 	Mat grayImage;
 	cvtColor(srcImage, grayImage, COLOR_BGR2GRAY);
 
@@ -1116,8 +1111,8 @@ void ChapterFifth::TestCalcHist()
 #define HIST_SIZE (200)
 #define IMAGE_WIDTH (800)
 #define IMAGE_HEIGHT (800)
-	Mat srcImage = imread("G:\\TestMaterials\\photo\\1280_800_3.jpg");
-	//Mat srcImage = imread("G:\\TestMaterials\\01.jpg");
+	Mat srcImage = imread("../TestMaterials/photo/1280_800_3.jpg");
+	//Mat srcImage = imread("../TestMaterials/01.jpg");
 	Mat grayImage;
 	cvtColor(srcImage, grayImage, COLOR_BGR2GRAY);
 
@@ -1153,7 +1148,7 @@ void ChapterFifth::TestCalcBackProject()
 {
 	namedWindow("TestCalcBackProject", CV_WINDOW_AUTOSIZE);
 	createTrackbar("色调组距", "TestCalcBackProject", 0, 100, onBinValueChange, 0);
-	Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
+	Mat srcImage = imread("../TestMaterials/04.jpg");
 	//srcImageClone = srcImage.clone();
 
 	Mat hsvImage;
@@ -1168,8 +1163,9 @@ void ChapterFifth::TestCalcBackProject()
 //如何判断不匹配
 void ChapterFifth::TestMatchTemplate()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\04.jpg");
-	Mat templateImage = imread("G:\\TestMaterials\\1212.jpg");
+	Mat srcImage = imread("../TestMaterials/04.jpg");
+	Mat templateImage = imread("../TestMaterials/1212.jpg");
+
 	Mat resultImage;
 	matchTemplate(srcImage, templateImage, resultImage, CV_TM_CCOEFF);
 

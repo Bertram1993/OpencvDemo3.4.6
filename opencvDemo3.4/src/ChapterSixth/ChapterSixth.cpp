@@ -76,7 +76,7 @@ ChapterSixth::~ChapterSixth()
 void ChapterSixth::TestEraseBackground()
 {
 	namedWindow("TestEraseBackground", CV_WINDOW_AUTOSIZE);
-	srcImage = imread("G:\\TestMaterials\\qiammo.png");
+	srcImage = imread("../TestMaterials/qiammo.png");
 	dstImage = srcImage;
 
 	imshow("TestEraseBackground", srcImage);

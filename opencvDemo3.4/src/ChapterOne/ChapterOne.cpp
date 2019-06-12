@@ -16,7 +16,7 @@ ChapterOne::~ChapterOne()
 
 void ChapterOne::testErode()
 {
-	Mat srcImage = imread("G:\\TestMaterials\\05.png");
+	Mat srcImage = imread("../TestMaterials/05.png");
 	imshow("src", srcImage);
 	Mat element = getStructuringElement(MORPH_ELLIPSE, Size(6, 6));
 	Mat dstImage;
@@ -28,7 +28,7 @@ void ChapterOne::testImage()
 {
 	IplImage *src, *dst_blur, *dst_median, *dst_gaussian;
 	//src = cvLoadImage("G:/TestMaterials/05.png", CV_LOAD_IMAGE_COLOR);
-	src = cvLoadImage("G:/TestMaterials/gaosi.jpg", CV_LOAD_IMAGE_COLOR);
+	src = cvLoadImage("../TestMaterials/gaosi.jpg", CV_LOAD_IMAGE_COLOR);
 	//src = cvLoadImage("G:/TestMaterials/04.jpg", CV_LOAD_IMAGE_COLOR);
 	CvSize srcSize(src->width, src->height);
 	const CvArr* tmpTest = src;
@@ -62,8 +62,8 @@ void ChapterOne::testImage()
 
 void ChapterOne::TestCanny()
 {
-	//Mat srcImage = imread("G:\\TestMaterials\\05.png");
-	Mat srcImage = imread("G:\\TestMaterials\\06.jpg");
+	//Mat srcImage = imread("../TestMaterials/05.png");
+	Mat srcImage = imread("../TestMaterials/06.jpg");
 	imshow("src", srcImage);
 	//Mat dstImage;
 	Mat edge;

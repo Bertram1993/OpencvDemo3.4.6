@@ -23,7 +23,7 @@ int main()
 	TestChapterOne.TestCaptureCamera();*/
 
 	ChapterFifth TestChapterThird;
-	TestChapterThird.TestScharr();
+	TestChapterThird.TestMatchTemplate();
 	
 	//ChapterSixth TestChapterSixth;
 	//TestChapterSixth.TestEraseBackground();
